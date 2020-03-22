@@ -1,4 +1,4 @@
-package com.github.yuizho.factorymethod
+package com.github.yuizho.abstractfactory
 
 fun main() {
     val nyStore = NYPizzaStore()

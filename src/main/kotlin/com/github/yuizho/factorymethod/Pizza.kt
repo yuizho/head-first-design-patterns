@@ -16,10 +16,6 @@ abstract class Pizza(
     fun cook() {
         println("cook a Pizza")
     }
-
-    override fun toString(): String {
-        return "Pizza(name='$name', dough='$dough', sauce='$sauce', toppings=$toppings)"
-    }
 }
 
 class NYStyleCheesePizza : Pizza(

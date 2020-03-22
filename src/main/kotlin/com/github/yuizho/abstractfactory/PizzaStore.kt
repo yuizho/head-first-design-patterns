@@ -1,4 +1,4 @@
-package com.github.yuizho.factorymethod
+package com.github.yuizho.abstractfactory
 
 abstract class PizzaStore {
     fun orderPizza(type: String): Pizza {
@@ -13,9 +13,11 @@ abstract class PizzaStore {
 }
 
 class NYPizzaStore : PizzaStore() {
+    val ingredientFactory = NYPizzaIngredientFactory()
+
     override fun createPizza(type: String): Pizza {
         return if (type == "cheese") {
-            NYStyleCheesePizza()
+            CheesePizza(ingredientFactory)
         } else {
             throw RuntimeException("unexpected pizza type")
         }
